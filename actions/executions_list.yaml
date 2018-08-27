@@ -13,6 +13,10 @@ parameters:
     type: "string"
     description: "Optional status to filter the executions on"
     required: false
+  include_attributes:
+    type: "array"
+    description: "List of attributes to include in response executions"
+    required: false
   limit:
     type: "integer"
     description: "Maximum number of executions to return"

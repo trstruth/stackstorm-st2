@@ -19,7 +19,7 @@ def format_result(result):
 
 
 class St2ExecutionsListAction(St2BaseAction):
-    def run(self, action=None, status=None, limit=5):
+    def run(self, action=None, status=None, include_attributes=None, limit=5):
         kwargs = {}
 
         kwargs['limit'] = limit
@@ -29,6 +29,9 @@ class St2ExecutionsListAction(St2BaseAction):
 
         if status:
             kwargs['status'] = status
+
+        if include_attributes:
+            kwargs['include_attributes'] = include_attributes
 
         if kwargs:
             method = self.client.liveactions.query
